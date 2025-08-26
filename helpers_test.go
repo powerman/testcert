@@ -3,7 +3,7 @@ package testcert_test
 import (
 	"crypto/tls"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/http"
 	"testing"
@@ -18,11 +18,11 @@ func Test(tt *testing.T) {
 	t := check.T(tt)
 	t.Parallel()
 
-	l, err := net.Listen("tcp", "127.0.0.1:0")
+	l, err := new(net.ListenConfig).Listen(t.Context(), "tcp", "127.0.0.1:0")
 	t.Nil(err)
 
 	srv := &http.Server{
-		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		Handler: http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 			w.Write([]byte("ok"))
 		}),
 		TLSConfig: &tls.Config{
@@ -42,7 +42,7 @@ func Test(tt *testing.T) {
 	}
 	res, err := client.Get("https://" + l.Addr().String()) //nolint:noctx // Test.
 	t.Nil(err)
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	res.Body.Close()
 	t.Nil(err)
 	t.Equal(string(body), "ok")
