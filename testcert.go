@@ -4,7 +4,7 @@
 
 // Package testcert contains a test-only localhost certificate.
 //
-//nolint:gochecknoglobals,godot // Go sources.
+//nolint:gochecknoglobals,godot,godoclint // Go sources.
 package testcert
 
 import "strings"
