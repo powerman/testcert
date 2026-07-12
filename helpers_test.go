@@ -30,7 +30,7 @@ func Test(tt *testing.T) {
 		},
 	}
 	go srv.ServeTLS(l, "", "")
-	defer srv.Close()
+	t.Cleanup(func() { srv.Close() })
 	t.Nil(waitTCPPort(l.Addr()))
 
 	client := &http.Client{
