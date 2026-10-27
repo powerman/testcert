@@ -466,6 +466,8 @@ linters:
         text: should have a godoc \("(String|Error|Format|(Marshal|Unmarshal)(Text|JSON))"\)
     paths:
       - \.[\w-]+\.go$ # Use this pattern to name auto-generated files.
+      # Vendored (see .gitattributes), keep upstream code unchanged.
+      - ^testcert\.go$
 formatters:
   enable:
     - gci
@@ -495,6 +497,8 @@ formatters:
     generated: strict
     paths:
       - \.[\w-]+\.go$ # Use this pattern to name auto-generated files.
+      # Vendored (see .gitattributes), keep upstream code unchanged.
+      - ^testcert\.go$
 issues:
   max-issues-per-linter: 0
   max-same-issues: 0
