@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-10-28
+
+### 🔔 Changed
+
+- Require Go 1.26 by @powerman in [cb3a08b]
+
+### 📦️ Dependencies
+
+- **(deps)** Upgrade go and golangci-lint by @powerman in [20f5402]
+- **(deps)** Upgrade go modules by @powerman in [fc33847]
+- **(deps)** Upgrade go and golangci-lint by @powerman in [cbfa357]
+- **(deps)** Mise up by @powerman in [a742719]
+
+[0.4.0]: https://github.com/powerman/testcert/compare/v0.3.0..v0.4.0
+[20f5402]: https://github.com/powerman/testcert/commit/20f540200d04ac15ce80f7d45d8997808a150fa4
+[fc33847]: https://github.com/powerman/testcert/commit/fc3384780513987a7c7314393f833b0c8f4418f8
+[cbfa357]: https://github.com/powerman/testcert/commit/cbfa3573a4a2923b0a75b86c7bda830d33e0b19e
+[cb3a08b]: https://github.com/powerman/testcert/commit/cb3a08bc5f96d2e21ebf357643b75b1a4611decc
+[a742719]: https://github.com/powerman/testcert/commit/a742719fc0f2a11822c2403f4d284cc1ab403028
+
 ## [0.3.0] - 2026-07-12
 
 [0.3.0]: https://github.com/powerman/testcert/compare/v0.2.1..v0.3.0
